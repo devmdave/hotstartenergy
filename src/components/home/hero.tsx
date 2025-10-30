@@ -7,7 +7,7 @@ import { BrandPartners } from './brand-partners';
 import { TrustedBy } from './trusted-by';
 import React from 'react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import test1 from '../../../public/test1.jpg'
+import test1 from '../../../public/test2.jpg'
 import test2 from '../../../public/test2.jpg'
 import test3 from '../../../public/test3.jpg'
 import test4 from '../../../public/test4.jpg'
@@ -30,15 +30,15 @@ export function Hero() {
   )
 
   return (
-    <section className="relative mt-[15vh] h-screen min-h-[700px] w-full flex flex-col justify-between">
-      <Carousel className="w-[80vw] max-h-64 mx-auto" plugins={[plugin.current]}>
+    <section className="relative mt-[14vh] mb-[20vh] h-screen min-h-[700px] w-full flex flex-col justify-between">
+      <Carousel className="w-[100vw] max-h-64 my-auto mx-auto" plugins={[plugin.current]}>
       <CarouselContent>
         {Array.from({ length: 4 }).map((_, index) => (
           <CarouselItem key={index}>
             <div className="">
               <Card>
-                <CardContent className="p-0">
-                  <div className="h-full w-full">
+                <CardContent className="p-0 w-full">
+                  <div className="max-h-[50vw] max-md:max-h-full w-full">
                       <Image
                         src={heroImages[index]}
                         alt={`Hero image ${index + 1}`}
@@ -56,10 +56,9 @@ export function Hero() {
       <CarouselPrevious />
       <CarouselNext />
     </Carousel>
-      <div className="absolute inset-0 bg-black/60" />
+      <div className="absolute inset-0 bg-black/40" />
 
-      <div className="relative z-10 flex flex-col items-center justify-end flex-grow text-center text-white pb-16">
-        <div className="container px-4">
+      <div className="relative z-10 flex flex-col items-center justify-end flex-grow text-center text-white pb-16">        <div className="container px-4">
           <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl" style={{ textShadow: '2px 2px 8px rgba(0, 0, 0, 0.7)' }}>
             Powering the <span className="text-accent">future</span> with
             precision and control
@@ -79,7 +78,7 @@ export function Hero() {
         </div>
       </div>
 
-      <div className="relative z-10 w-full pb-8 space-y-8 bg-background/80 backdrop-blur-sm">
+      <div className="relative mt-[12vh] z-10 w-full pb-8 space-y-8 bg-background/80 backdrop-blur-sm">
           <BrandPartners />
           <TrustedBy />
       </div>
