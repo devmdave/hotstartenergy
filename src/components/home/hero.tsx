@@ -7,7 +7,7 @@ import { BrandPartners } from './brand-partners';
 import { TrustedBy } from './trusted-by';
 import React from 'react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import test1 from '../../../public/test2.jpg'
+import test1 from '../../../public/test1.jpg'
 import test2 from '../../../public/test2.jpg'
 import test3 from '../../../public/test3.jpg'
 import test4 from '../../../public/test4.jpg'
@@ -21,18 +21,17 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel"
 import Autoplay from "embla-carousel-autoplay"
-import test from 'node:test';
 
 export function Hero() {
   const images = PlaceHolderImages.filter(p => p.id.startsWith('hero-'));
   const heroImages = [test1, test2, test3, test4];
   const plugin = React.useRef(
-    Autoplay({ delay: 3000, stopOnInteraction: false, stopOnMouseEnter: true })
+    Autoplay({ delay: 2000, stopOnInteraction: false, stopOnMouseEnter: true })
   )
 
   return (
     <section className="relative mt-[15vh] h-screen min-h-[700px] w-full flex flex-col justify-between">
-      <Carousel className="w-[80vw] max-h-64 mx-auto" >
+      <Carousel className="w-[80vw] max-h-64 mx-auto" plugins={[plugin.current]}>
       <CarouselContent>
         {Array.from({ length: 4 }).map((_, index) => (
           <CarouselItem key={index}>
